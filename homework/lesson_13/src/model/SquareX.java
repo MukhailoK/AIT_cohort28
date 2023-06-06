@@ -29,7 +29,7 @@ public class SquareX {
     public String getResult() {
         if (discriminant() > 0) {
             return "Result: x1 = " + x1() + ", x2 = " + x2();
-        } else if (x1() == x2()) {
+        } else if (discriminant() == 0) {
             return "Result x = " + x1();
         } else
             return "No Roots";
