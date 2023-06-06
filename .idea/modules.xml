@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-    <component name="ProjectModuleManager">
-        <modules>
-            <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/My lesson_12/My lesson_12.iml"
-                    filepath="$PROJECT_DIR$/basic_programming_my_code/My lesson_12/My lesson_12.iml"/>
-            <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/My_lesson_10/My_lesson_10.iml"
-                    filepath="$PROJECT_DIR$/basic_programming_my_code/My_lesson_10/My_lesson_10.iml"/>
-            <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/My_lesson_11/My_lesson_11.iml"
-                    filepath="$PROJECT_DIR$/basic_programming_my_code/My_lesson_11/My_lesson_11.iml"/>
-            <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/My_lesson_13/My_lesson_13.iml"
-                    filepath="$PROJECT_DIR$/basic_programming_my_code/My_lesson_13/My_lesson_13.iml"/>
-            <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/My_lesson_7/My_lesson_7.iml"
-                    filepath="$PROJECT_DIR$/basic_programming_my_code/My_lesson_7/My_lesson_7.iml"/>
-            <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/My_lesson_06/lesson_06.iml"
-                    filepath="$PROJECT_DIR$/basic_programming_my_code/My_lesson_06/lesson_06.iml"/>
-            <module fileurl="file://$PROJECT_DIR$basic_programming_my_code/My_lesson_06/lesson_06.iml"
-                    filepath="$PROJECT_DIR$/basic_programming_my_code/My_lesson_06/lesson_06.iml"/>
-            <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/my_lesson_8/my_lesson_8.iml"
-                    filepath="$PROJECT_DIR$/basic_programming_my_code/my_lesson_8/my_lesson_8.iml"/>
-            <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/my_lesson_9/my_lesson_9.iml"
-                    filepath="$PROJECT_DIR$/basic_programming_my_code/my_lesson_9/my_lesson_9.iml"/>
-            <module fileurl="file://$PROJECT_DIR$/.idea/AIT_cohot28.iml"
-                    filepath="$PROJECT_DIR$/.idea/AIT_cohot28.iml"/>
-        </modules>
-    </component>
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AIT_cohot28.iml" filepath="$PROJECT_DIR$/.idea/AIT_cohot28.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/My_lesson_06/My_lesson_06.iml" filepath="$PROJECT_DIR$/basic_programming_my_code/My_lesson_06/My_lesson_06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/My_lesson_07/My_lesson_07.iml" filepath="$PROJECT_DIR$/basic_programming_my_code/My_lesson_07/My_lesson_07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/My_lesson_10/My_lesson_10.iml" filepath="$PROJECT_DIR$/basic_programming_my_code/My_lesson_10/My_lesson_10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/My_lesson_11/My_lesson_11.iml" filepath="$PROJECT_DIR$/basic_programming_my_code/My_lesson_11/My_lesson_11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/My_lesson_12/My_lesson_12.iml" filepath="$PROJECT_DIR$/basic_programming_my_code/My_lesson_12/My_lesson_12.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/My_lesson_13/My_lesson_13.iml" filepath="$PROJECT_DIR$/basic_programming_my_code/My_lesson_13/My_lesson_13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/homework/lesson_13/lesson_13.iml" filepath="$PROJECT_DIR$/homework/lesson_13/lesson_13.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/my_lesson_08/my_lesson_08.iml" filepath="$PROJECT_DIR$/basic_programming_my_code/my_lesson_08/my_lesson_08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/basic_programming_my_code/my_lesson_09/my_lesson_09.iml" filepath="$PROJECT_DIR$/basic_programming_my_code/my_lesson_09/my_lesson_09.iml" />
+    </modules>
+  </component>
 </project>
