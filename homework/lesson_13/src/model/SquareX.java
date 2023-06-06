@@ -15,15 +15,7 @@ public class SquareX {
     }
 
     private double discriminant() {
-        if (a != 0) {
-            double NaN = 1. / 0;
-            int dis = (b * b) - (4 * a * c);
-            if (dis < 0) {
-                return NaN;
-            } else if (dis > 0)
-                return Math.sqrt(dis);
-        }
-        return 0;
+        return Math.sqrt((b * b) - (4 * a * c));
     }
 
     public double x1() {
@@ -35,13 +27,11 @@ public class SquareX {
     }
 
     public String getResult() {
-        if (x1() == 1. / 0 || x2() == 1. / 0) {
-            return "No Roots";
-        }
-        if (x1() == x2()) {
+        if (discriminant() > 0) {
+            return "Result: x1 = " + x1() + ", x2 = " + x2();
+        } else if (x1() == x2()) {
             return "Result x = " + x1();
         } else
-            return "Result: x1 = " + x1() + ", x2 = " + x2();
+            return "No Roots";
     }
-
 }
