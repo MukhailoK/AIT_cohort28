@@ -1,20 +1,23 @@
 package book.model;
 
 public class Book {
-    private String name;
-    private String author;
+    private final String name;
+    private final String author;
+    private final int yearOfPrinting;
     private String iSBN;
-    private int yearOfPrinting;
 
-    public Book(String name, String author) {
+    public Book(String name, int yearOfPrinting) {
         this.name = name;
-        this.author = author;
+        this.author = "Unknown";
+        this.yearOfPrinting = yearOfPrinting;
+        this.iSBN = "Unknown";
     }
 
     public Book(String name, String author, int yearOfPrinting) {
         this.name = name;
         this.author = author;
         this.yearOfPrinting = yearOfPrinting;
+        this.iSBN = "Unknown";
     }
 
     public Book(String name, String author, String iSBN, int yearOfPrinting) {
@@ -28,16 +31,8 @@ public class Book {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getAuthor() {
         return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
     @Override
@@ -54,15 +49,12 @@ public class Book {
         return iSBN;
     }
 
-    public void setISBN(String iSBN) {
-        this.iSBN = iSBN;
+    public void setISBN(String ISBN) {
+        this.iSBN = ISBN;
     }
 
     public int getYearOfPrinting() {
         return yearOfPrinting;
     }
 
-    public void setYearOfPrinting(int yearOfPrinting) {
-        this.yearOfPrinting = yearOfPrinting;
-    }
 }
