@@ -18,7 +18,7 @@ public class ProductApp {
 
     public static void printProduct(List<Product> products) {
         for (Product p : products) {
-            System.out.println(p.toString());
+            System.out.println(p);
         }
     }
 
