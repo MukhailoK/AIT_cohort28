@@ -48,9 +48,4 @@ public class Product {
         return barCode == product.barCode;
     }
 
-    public boolean equals(long o) {
-        return barCode == o;
-    }
-
-
 }

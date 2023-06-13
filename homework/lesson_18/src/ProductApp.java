@@ -51,7 +51,7 @@ public class ProductApp {
 
     private static Object getProduct(long barcode, Product[] products) {
         for (Product product : products) {
-            if (product.equals(barcode)) {
+            if (product.getBarCode() == barcode) {
                 return product;
             }
         }
