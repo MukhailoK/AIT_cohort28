@@ -24,10 +24,7 @@ public class LibraryApp {
                 2022));
         library.add(new Book("Kolobok", 2003));
         library.add(new Book("Clear coder", "Robert C. Martin", 2022));
-        library.add(new Book("Clear code",
-                "Robert C. Martin",
-                "978-617-09-5285-",
-                2022));
+
         printList(library);
     }
 
