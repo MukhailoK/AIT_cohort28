@@ -1,15 +1,14 @@
 package book;
 //Задача 1
 //
-//Создать класс Book в пакете ait.book.model.
-// В этом классе определить поля: private long isbn;
-// private String title; private String author; private int yearOfPublishing;
-// Создать конструкторы для иницализации всех полей, и конструктор для инициализации полуй при отсутствии автора.
-// Остальные конструкторы на Ваше усмотрение. Создать геттеры и сеттеры исходя из логики и необходимости.
-// Создать метод public void display() для печати в консоль информации о книге.
-// Создать класс BookAppl в пакете ait.book с методом main.
-// В методе main создать несколько экземпляров Book и вывести для каждого из них результат работы метода display.
-
+//Возьмите проект Book из домашнего задания к 15 уроку.
+// Поле isbn сделайте final.
+// Добавьте константу public static final int ISBN_LENGTH = 13.
+// В конструкторе, при инициализации isbn сделайте проверку аргумента на
+// колличество цифр в числе. Оно должно быть равно ISBN_LENGTH.
+// Если не равно, то инициализируйте isbn значением -1.
+// Для подсчета колличества цифр в числе,
+// используйте алгоритм реализованный нами в предыдущих уроках.
 import book.model.Book;
 
 import java.util.ArrayList;
@@ -20,11 +19,23 @@ public class LibraryApp {
         List<Book> library = new ArrayList<>();
         library.add(new Book("Clear code",
                 "Robert C. Martin",
-                "978-617-09-5285-1",
+                978_617_09_5285_1L,
                 2022));
         library.add(new Book("Kolobok", 2003));
         library.add(new Book("Clear coder", "Robert C. Martin", 2022));
-
+        library.add(new Book("Clear code",
+                "Robert C. Martin",
+                978_617_09_5285L,
+                2022));
+        library.add(new Book("Clear code",
+                "Robert C. Martin",
+                978_617_09_52385_1L,
+                2022));
+        library.add(new Book("Kolobok","Volk", 111_558_89_6552_3L, 2003));
+        library.add(new Book("Clear code",
+                "Robert C. Martin",
+                12221L,
+                2022));
         printList(library);
     }
 

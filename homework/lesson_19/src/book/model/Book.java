@@ -5,37 +5,37 @@ public class Book {
     private final String name;
     private final String author;
     private final int yearOfPrinting;
-    private final String iSBN;
+    private final long isbn;
 
     public Book(String name, int yearOfPrinting) {
         this.name = name;
         this.author = "Unknown";
         this.yearOfPrinting = yearOfPrinting;
-        this.iSBN = "-1";
+        this.isbn = -1;
     }
 
     public Book(String name, String author, int yearOfPrinting) {
         this.name = name;
         this.author = author;
         this.yearOfPrinting = yearOfPrinting;
-        this.iSBN = "-1";
+        this.isbn = -1;
     }
 
-    public Book(String name, String author, String iSBN, int yearOfPrinting) {
+    public Book(String name, String author, long isbn, int yearOfPrinting) {
         this.name = name;
         this.author = author;
-        this.iSBN = checkCorrect(iSBN);
+        this.isbn = checkCorrect(isbn);
         this.yearOfPrinting = yearOfPrinting;
     }
 
-    private static String checkCorrect(String iSBN) {
-        if (iSBN != null && iSBN.length() != 0) {
-            String isbn = iSBN.replaceAll("-", "");
+    private static long checkCorrect(long isbn_) {
+        if (isbn_ != 0) {
+            String isbn = String.valueOf(isbn_);
             if (isbn.length() == ISBN_LENGTH) {
-                return iSBN;
+                return isbn_;
             }
         }
-        return "-1";
+        return -1;
 
     }
 
@@ -52,13 +52,13 @@ public class Book {
         return "Book{" +
                 "name='" + name + '\'' +
                 ", author='" + author + '\'' +
-                ", iSBN='" + iSBN + '\'' +
+                ", iSBN='" + isbn + '\'' +
                 ", yearOfPrinting=" + yearOfPrinting +
                 '}';
     }
 
-    public String getISBN() {
-        return iSBN;
+    public long getISBN() {
+        return isbn;
     }
 
     public int getYearOfPrinting() {
