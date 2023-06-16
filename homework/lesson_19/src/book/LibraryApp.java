@@ -31,7 +31,10 @@ public class LibraryApp {
                 "Robert C. Martin",
                 978_617_09_52385_1L,
                 2022));
-        library.add(new Book("Kolobok","Volk", 111_558_89_6552_3L, 2003));
+        library.add(new Book("Kolobok"
+                ,"Volk"
+                , 111_558_89_6552_3L
+                , 2003));
         library.add(new Book("Clear code",
                 "Robert C. Martin",
                 12221L,

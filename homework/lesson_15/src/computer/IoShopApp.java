@@ -1,8 +1,8 @@
 package computer;
 
-import ait.computer.model.Computer;
-import ait.computer.model.Laptop;
-import ait.computer.model.Smartphone;
+import computer.model.Computer;
+import computer.model.Laptop;
+import computer.model.Smartphone;
 
 public class IoShopApp {
 
