@@ -51,14 +51,14 @@ public class Test {
     private static String[] getPasswords(int count, char[] chars) {
         String[] passwords = new String[count];
         for (int i = 0; i < passwords.length; i++) {
-            char firstSymbol = chars[(int) (Math.random() * (0 - chars.length + 1) + chars.length)];
-            char secondSymbol = chars[(int) (Math.random() * (0 - chars.length + 1) + chars.length)];
-            char thirdSymbol = chars[(int) (Math.random() * (0 - chars.length + 1) + chars.length)];
-            char fourthSymbol = chars[(int) (Math.random() * (0 - chars.length + 1) + chars.length)];
-            char fifthSymbol = chars[(int) (Math.random() * (0 - chars.length + 1) + chars.length)];
-            char sixthSymbol = chars[(int) (Math.random() * (0 - chars.length + 1) + chars.length)];
-            char seventhSymbol = chars[(int) (Math.random() * (0 - chars.length + 1) + chars.length)];
-            char eighthSymbol = chars[(int) (Math.random() * (0 - chars.length + 1) + chars.length)];
+            char firstSymbol = chars[(int) (Math.random() * (-chars.length + 1) + chars.length)];
+            char secondSymbol = chars[(int) (Math.random() * (-chars.length + 1) + chars.length)];
+            char thirdSymbol = chars[(int) (Math.random() * (-chars.length + 1) + chars.length)];
+            char fourthSymbol = chars[(int) (Math.random() * (-chars.length + 1) + chars.length)];
+            char fifthSymbol = chars[(int) (Math.random() * (-chars.length + 1) + chars.length)];
+            char sixthSymbol = chars[(int) (Math.random() * (-chars.length + 1) + chars.length)];
+            char seventhSymbol = chars[(int) (Math.random() * (-chars.length + 1) + chars.length)];
+            char eighthSymbol = chars[(int) (Math.random() * (-chars.length + 1) + chars.length)];
 
             String password = "" + firstSymbol + secondSymbol + thirdSymbol + fourthSymbol +
                     fifthSymbol + sixthSymbol + seventhSymbol + eighthSymbol;
@@ -70,22 +70,22 @@ public class Test {
 
     private static char[] getChars() {
         char ch = '0';
-        int code = (int) ch;
+        int code = ch;
         System.out.println("Numeric code of " + ch + " is " + code);
         ch = '9';
-        code = (int) ch;
+        code = ch;
         System.out.println("Numeric code of " + ch + " is " + code);
         ch = 'A';
-        code = (int) ch;
+        code = ch;
         System.out.println("Numeric code of " + ch + " is " + code);
         ch = 'Z';
-        code = (int) ch;
+        code = ch;
         System.out.println("Numeric code of " + ch + " is " + code);
         ch = 'a';
-        code = (int) ch;
+        code =ch;
         System.out.println("Numeric code of " + ch + " is " + code);
         ch = 'z';
-        code = (int) ch;
+        code = ch;
         System.out.println("Numeric code of " + ch + " is " + code);
 
         char c = 43;
