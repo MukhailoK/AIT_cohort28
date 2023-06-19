@@ -1,11 +1,12 @@
 package model;
 
 //import javax.validation.constraints.Pattern;
+
 import java.util.Objects;
 
 public class User {
     private String email;
-//    @Pattern(regexp = "(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}",
+    //    @Pattern(regexp = "(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}",
 //            message = "Must be minimum 6 characters, at least one letter and one number")
     private String password;
 
@@ -76,19 +77,15 @@ public class User {
     5) min one special symbol (!%@*&)
      */
     private boolean validatePassword(String password) {
-        if (password.length() < 8) {
-            return false;
-        }
-        if (!haseUpperSymb(password)) {
-            return false;
-        }
-        if (!haseLowerSymb(password)) {
-            return false;
-        }
-        if (!haseDigitSymb(password)) {
-            return false;
-        }
-        return haseSpecialSymb(password);
+        return checkLength(password)
+                && haseUpperSymb(password)
+                && haseLowerSymb(password)
+                && haseDigitSymb(password)
+                && haseSpecialSymb(password);
+    }
+
+    private boolean checkLength(String password) {
+        return password.length() >= 8;
     }
 
     private boolean haseSpecialSymb(String password) {
@@ -105,6 +102,7 @@ public class User {
     }
 
     private boolean haseDigitSymb(String password) {
+
         for (int i = 0; i < password.length(); i++) {
             if (password.charAt(i) > 47 && password.charAt(i) < 58) {
                 return true;
