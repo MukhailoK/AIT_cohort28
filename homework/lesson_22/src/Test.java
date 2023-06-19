@@ -15,7 +15,7 @@ public class Test {
 
         long start = System.currentTimeMillis();
         for (String password : passwords) {
-            if (User.validatePassword(password)) {
+            if (User.getValidatePassword(password)) {
                 countValidPasswords++;
             }
         }
@@ -24,7 +24,7 @@ public class Test {
 
         start = System.currentTimeMillis();
         for (String password : passwords) {
-            if (User.validatePasswordMethods(password)) {
+            if (User.getValidatePasswordMethog(password)) {
                 countValidPasswordsMethods++;
             }
         }
@@ -33,7 +33,7 @@ public class Test {
 
         start = System.currentTimeMillis();
         for (String password : passwords) {
-            if (User.validatePasswordRegEx(password)) {
+            if (User.getValidatePasswordRegEx(password)) {
                 countValidPasswordsWithRegEx++;
             }
         }
