@@ -74,10 +74,18 @@ public class User {
     4) min one digit
     5) min one special symbol (!%@*&)
      */
-    private boolean validatePassword(String password) {
+
+    //===========================================================
+    //V1
+    // private boolean validatePassword(String password) {
     //    return password.matches("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!%@*&]).{8,}");
-//        Version 2
-//        boolean validUpper = false;
+//        }
+//=============================================================
+
+    //V2
+    //  private boolean validatePassword(String password) {
+
+    //        boolean validUpper = false;
 //        boolean validLower = false;
 //        boolean validDigit = false;
 //        boolean validSpecSymb = false;
@@ -105,7 +113,9 @@ public class User {
 //    }
 //        return validUpper == validDigit == validLower == validSpecSymb;
 //
-//                   or variant 3
+    //==================================================================
+    //V3
+    private boolean validatePassword(String password) {
         return checkLength(password)
                 && haseUpperSymb(password)
                 && haseLowerSymb(password)
