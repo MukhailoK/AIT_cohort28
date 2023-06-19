@@ -106,7 +106,7 @@ public class User {
 
     private boolean haseDigitSymb(String password) {
         for (int i = 0; i < password.length(); i++) {
-            if (password.charAt(i) > 47 || password.charAt(i) < 58) {
+            if (password.charAt(i) > 47 && password.charAt(i) < 58) {
                 return true;
             }
         }
@@ -115,7 +115,7 @@ public class User {
 
     private boolean haseLowerSymb(String password) {
         for (int i = 0; i < password.length(); i++) {
-            if (password.charAt(i) > 96 || password.charAt(i) < 123) {
+            if (password.charAt(i) > 96 && password.charAt(i) < 123) {
                 return true;
             }
         }
@@ -124,7 +124,7 @@ public class User {
 
     private boolean haseUpperSymb(String password) {
         for (int i = 0; i < password.length(); i++) {
-            if (password.charAt(i) > 64 || password.charAt(i) < 91) {
+            if (password.charAt(i) > 64 && password.charAt(i) < 91) {
                 return true;
             }
         }
