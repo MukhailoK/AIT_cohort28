@@ -77,13 +77,13 @@ public class User {
 
     //===========================================================
     //V1
-    // private boolean validatePassword(String password) {
-    //    return password.matches("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!%@*&]).{8,}");
-//        }
+    public static boolean validatePasswordRegEx(String password) {
+        return password.matches("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!%@*&]).{8,}");
+        }
 //=============================================================
 
     //V2
-    private boolean validatePassword(String password) {
+    public static boolean validatePassword(String password) {
 
         boolean validUpper = false;
         boolean validLower = false;
@@ -95,13 +95,13 @@ public class User {
         }
         for (int i = 0; i < password.length(); i++) {
             if (!validUpper) {
-                validUpper = password.charAt(i) > 47 && password.charAt(i) < 58;
+                validUpper = password.charAt(i) > 64 && password.charAt(i) < 91;
             }
             if (!validLower) {
                 validLower = password.charAt(i) > 96 && password.charAt(i) < 123;
             }
             if (!validDigit) {
-                validDigit = password.charAt(i) > 64 && password.charAt(i) < 91;
+                validDigit = password.charAt(i) > 47 && password.charAt(i) < 58;
             }
             if (!validSpecSymb) {
                 validSpecSymb = (password.charAt(i) == '!'
@@ -111,24 +111,24 @@ public class User {
                         || password.charAt(i) == '&');
             }
         }
-        return validUpper == validDigit == validLower == validSpecSymb;
+        return validUpper && validDigit && validLower && validSpecSymb;
     }
     //==================================================================
     //V3
-//    private boolean validatePassword(String password) {
-//        return checkLength(password)
-//                && haseUpperSymb(password)
-//                && haseLowerSymb(password)
-//                && haseDigitSymb(password)
-//                && haseSpecialSymb(password);
-//
-//    }
+    public static boolean validatePasswordMethods(String password) {
+        return checkLength(password)
+                && haseUpperSymb(password)
+                && haseLowerSymb(password)
+                && haseDigitSymb(password)
+                && haseSpecialSymb(password);
 
-    private boolean checkLength(String password) {
+    }
+
+    private static boolean checkLength(String password) {
         return password.length() >= 8;
     }
 
-    private boolean haseSpecialSymb(String password) {
+    private static boolean haseSpecialSymb(String password) {
         for (int i = 0; i < password.length(); i++) {
             if (password.charAt(i) == '!'
                     || password.charAt(i) == '%'
@@ -141,7 +141,7 @@ public class User {
         return false;
     }
 
-    private boolean haseDigitSymb(String password) {
+    private static boolean haseDigitSymb(String password) {
 
         for (int i = 0; i < password.length(); i++) {
             if (password.charAt(i) > 47 && password.charAt(i) < 58) {
@@ -151,7 +151,7 @@ public class User {
         return false;
     }
 
-    private boolean haseLowerSymb(String password) {
+    private static boolean haseLowerSymb(String password) {
         for (int i = 0; i < password.length(); i++) {
             if (password.charAt(i) > 96 && password.charAt(i) < 123) {
                 return true;
@@ -160,7 +160,7 @@ public class User {
         return false;
     }
 
-    private boolean haseUpperSymb(String password) {
+    private static boolean haseUpperSymb(String password) {
         for (int i = 0; i < password.length(); i++) {
             if (password.charAt(i) > 64 && password.charAt(i) < 91) {
                 return true;
