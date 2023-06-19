@@ -5,7 +5,7 @@ import java.util.Objects;
 
 public class User {
     private String email;
-//    @Pattern(regexp = "(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}",
+//    @Pattern(regexp = "(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}",
 //            message = "Must be minimum 6 characters, at least one letter and one number")
     private String password;
 
@@ -93,11 +93,11 @@ public class User {
 
     private boolean haseSpecialSymb(String password) {
         for (int i = 0; i < password.length(); i++) {
-            if (password.charAt(i) != '!'
-                    || password.charAt(i) != '%'
-                    || password.charAt(i) != '@'
-                    || password.charAt(i) != '*'
-                    || password.charAt(i) != '&') {
+            if (password.charAt(i) == '!'
+                    || password.charAt(i) == '%'
+                    || password.charAt(i) == '@'
+                    || password.charAt(i) == '*'
+                    || password.charAt(i) == '&') {
                 return true;
             }
         }
