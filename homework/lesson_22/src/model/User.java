@@ -75,12 +75,43 @@ public class User {
     5) min one special symbol (!%@*&)
      */
     private boolean validatePassword(String password) {
-        return password.matches("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!%@*&]).{8,}");
-//        return checkLength(password)
-//                && haseUpperSymb(password)
-//                && haseLowerSymb(password)
-//                && haseDigitSymb(password)
-//                && haseSpecialSymb(password);
+    //    return password.matches("(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!%@*&]).{8,}");
+//        Version 2
+//        boolean validUpper = false;
+//        boolean validLower = false;
+//        boolean validDigit = false;
+//        boolean validSpecSymb = false;
+//
+//        if (password.length() < 8) {
+//            return false;
+//        }
+//        for (int i = 0; i < password.length(); i++) {
+//            if (!validUpper) {
+//                validUpper = password.charAt(i) > 47 && password.charAt(i) < 58;
+//            }
+//            if (!validLower) {
+//                validLower = password.charAt(i) > 96 && password.charAt(i) < 123;
+//            }
+//            if (!validDigit) {
+//                validDigit = password.charAt(i) > 64 && password.charAt(i) < 91;
+//            }
+//            if (!validSpecSymb) {
+//                validSpecSymb = (password.charAt(i) == '!'
+//                        || password.charAt(i) == '%'
+//                        || password.charAt(i) == '@'
+//                        || password.charAt(i) == '*'
+//                        || password.charAt(i) == '&');
+//            }
+//    }
+//        return validUpper == validDigit == validLower == validSpecSymb;
+//
+//                   or variant 3
+        return checkLength(password)
+                && haseUpperSymb(password)
+                && haseLowerSymb(password)
+                && haseDigitSymb(password)
+                && haseSpecialSymb(password);
+
     }
 
     private boolean checkLength(String password) {
