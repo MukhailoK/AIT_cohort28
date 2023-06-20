@@ -3,10 +3,10 @@
 // (byte, int, short, long, char, float, double) If the arguments contain wrong type the application should print message: Wrong type
 public class Primitive {
     public static void main(String[] args) {
-        System.out.println(checkPimitive(args));
+        System.out.println(checkPrimitive(args));
     }
 
-    public static String checkPimitive(String[] args) {
+    public static String checkPrimitive(String[] args) {
         String res = "";
         int match = 0;
         for (String a : args) {
