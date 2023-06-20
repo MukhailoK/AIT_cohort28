@@ -7,46 +7,39 @@ public class Primitive {
     }
 
     public static String checkPrimitive(String[] args) {
-        String res = "";
+        StringBuilder res = new StringBuilder();
         int match = 0;
         for (String a : args) {
             switch (a) {
                 case "byte" -> {
-                    res += "byte MIN_VALUE = " + Byte.MIN_VALUE
-                            + "\nbyte MAX_VALUE = " + Byte.MAX_VALUE;
+                    res.append("byte MIN_VALUE = " + Byte.MIN_VALUE + "\nbyte MAX_VALUE = " + Byte.MAX_VALUE);
                     match++;
                 }
                 case "int" -> {
-                    res += "\nint MIN_VALUE = " + Integer.MIN_VALUE
-                            + "\nint MAX_VALUE = " + Integer.MAX_VALUE;
+                    res.append("\nint MIN_VALUE = " + Integer.MIN_VALUE + "\nint MAX_VALUE = " + Integer.MAX_VALUE);
                     match++;
                 }
                 case "short" -> {
-                    res += "\nshort MIN_VALUE = " + Short.MIN_VALUE
-                            + "\nshort MAX_VALUE = " + Short.MAX_VALUE;
+                    res.append("\nshort MIN_VALUE = " + Short.MIN_VALUE + "\nshort MAX_VALUE = " + Short.MAX_VALUE);
                     match++;
                 }
                 case "long" -> {
-                    res += "\nlong MIN_VALUE = " + Long.MIN_VALUE
-                            + "\nlong MAX_VALUE = " + Long.MAX_VALUE;
+                    res.append("\nlong MIN_VALUE = " + Long.MIN_VALUE + "\nlong MAX_VALUE = " + Long.MAX_VALUE);
                     match++;
                 }
                 case "char" -> {
-                    res += "\nchar MIN_VALUE = " + Character.MIN_VALUE
-                            + "\nchar MAX_VALUE = " + Character.MAX_VALUE;
+                    res.append("\nchar MIN_VALUE = " + Character.MIN_VALUE + "\nchar MAX_VALUE = " + Character.MAX_VALUE);
                     match++;
                 }
                 case "float" -> {
-                    res += "\nfloat MIN_VALUE = " + Float.MIN_VALUE
-                            + "\nfloat MAX_VALUE = " + Float.MAX_VALUE;
+                    res.append("\nfloat MIN_VALUE = " + Float.MIN_VALUE + "\nfloat MAX_VALUE = " + Float.MAX_VALUE);
                     match++;
                 }
                 case "boolean" -> {
-                    res += "\nboolean MIN_VALUE = " + Boolean.FALSE
-                            + "\nboolean MAX_VALUE = " + Boolean.TRUE;
+                    res.append("\nboolean MIN_VALUE = ").append(Boolean.FALSE).append("\nboolean MAX_VALUE = ").append(Boolean.TRUE);
                     match++;
                 }
-                default -> res += "\nWrong argument : " + a;
+                default -> res.append("\nWrong argument : ").append(a);
             }
         }
         if (match == 0) {
@@ -65,6 +58,6 @@ public class Primitive {
                     + "\nboolean MIN_VALUE = " + Boolean.FALSE
                     + "\nboolean MAX_VALUE = " + Boolean.TRUE;
         } else
-            return res;
+            return res.toString();
     }
 }
