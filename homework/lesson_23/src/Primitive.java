@@ -12,34 +12,44 @@ public class Primitive {
         for (String a : args) {
             switch (a) {
                 case "byte" -> {
-                    res.append("\nbyte MIN_VALUE = " + Byte.MIN_VALUE + "\nbyte MAX_VALUE = " + Byte.MAX_VALUE);
+                    res.append("\nbyte MIN_VALUE = " + Byte.MIN_VALUE);
+                    res.append("\nbyte MAX_VALUE = " + Byte.MAX_VALUE);
                     match++;
                 }
                 case "int" -> {
-                    res.append("\nint MIN_VALUE = " + Integer.MIN_VALUE + "\nint MAX_VALUE = " + Integer.MAX_VALUE);
+                    res.append("\nint MIN_VALUE = " + Integer.MIN_VALUE);
+                    res.append("\nint MAX_VALUE = " + Integer.MAX_VALUE);
                     match++;
                 }
                 case "short" -> {
-                    res.append("\nshort MIN_VALUE = " + Short.MIN_VALUE + "\nshort MAX_VALUE = " + Short.MAX_VALUE);
+                    res.append("\nshort MIN_VALUE = " + Short.MIN_VALUE);
+                    res.append("\nshort MAX_VALUE = " + Short.MAX_VALUE);
                     match++;
                 }
                 case "long" -> {
-                    res.append("\nlong MIN_VALUE = " + Long.MIN_VALUE + "\nlong MAX_VALUE = " + Long.MAX_VALUE);
+                    res.append("\nlong MIN_VALUE = " + Long.MIN_VALUE);
+                    res.append("\nlong MAX_VALUE = " + Long.MAX_VALUE);
                     match++;
                 }
                 case "char" -> {
-                    res.append("\nchar MIN_VALUE = " + Character.MIN_VALUE + "\nchar MAX_VALUE = " + Character.MAX_VALUE);
+                    res.append("\nchar MIN_VALUE = " + Character.MIN_VALUE);
+                    res.append("\nchar MAX_VALUE = " + Character.MAX_VALUE);
                     match++;
                 }
                 case "float" -> {
-                    res.append("\nfloat MIN_VALUE = " + Float.MIN_VALUE + "\nfloat MAX_VALUE = " + Float.MAX_VALUE);
+                    res.append("\nfloat MIN_VALUE = " + Float.MIN_VALUE);
+                    res.append("\nfloat MAX_VALUE = " + Float.MAX_VALUE);
                     match++;
                 }
                 case "boolean" -> {
-                    res.append("\nboolean MIN_VALUE = ").append(Boolean.FALSE).append("\nboolean MAX_VALUE = ").append(Boolean.TRUE);
+                    res.append("\nboolean MIN_VALUE = ")
+                            .append(Boolean.FALSE)
+                            .append("\nboolean MAX_VALUE = ")
+                            .append(Boolean.TRUE);
                     match++;
                 }
-                default -> res.append("\nWrong argument : ").append(a);
+                default -> res.append("\nWrong argument : ")
+                        .append(a);
             }
         }
         if (match == 0) {
