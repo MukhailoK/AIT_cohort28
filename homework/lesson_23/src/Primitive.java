@@ -12,7 +12,7 @@ public class Primitive {
         for (String a : args) {
             switch (a) {
                 case "byte" -> {
-                    res.append("byte MIN_VALUE = " + Byte.MIN_VALUE + "\nbyte MAX_VALUE = " + Byte.MAX_VALUE);
+                    res.append("\nbyte MIN_VALUE = " + Byte.MIN_VALUE + "\nbyte MAX_VALUE = " + Byte.MAX_VALUE);
                     match++;
                 }
                 case "int" -> {
