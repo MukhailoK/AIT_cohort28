@@ -1,7 +1,7 @@
-import model.Food;
-import model.MIlkFood;
-import model.MeatFood;
-import model.Product;
+import ait.user.model.Food;
+import ait.user.model.MIlkFood;
+import ait.user.model.MeatFood;
+import ait.user.model.Product;
 
 import java.util.ArrayList;
 import java.util.List;

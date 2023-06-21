@@ -88,7 +88,7 @@ ______________
 - наименование Car, Auto, Vehicle (варианты)
 - поля:
     - vendor, brand, plant, manufacture (название) - String (тип)
-    - model - String
+    - ait.user.model - String
     - VIN - String
     - year - int
     - price - int, double, long

@@ -1,6 +1,6 @@
-import model.Computer;
-import model.Laptop;
-import model.Smartphone;
+import ait.user.model.Computer;
+import ait.user.model.Laptop;
+import ait.user.model.Smartphone;
 
 public class ComputerAppl {
     public static void main(String[] args) {

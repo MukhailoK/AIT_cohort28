@@ -1,7 +1,7 @@
-import model.Food;
-import model.MeatFood;
-import model.MilkFood;
-import model.Product;
+import ait.user.model.Food;
+import ait.user.model.MeatFood;
+import ait.user.model.MilkFood;
+import ait.user.model.Product;
 
 public class ProductApp {
     public static void main(String[] args) {

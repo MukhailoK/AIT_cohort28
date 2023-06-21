@@ -5,7 +5,7 @@ import ait.employee.model.Employee;
 public class EmployeeApp {
     public static void main(String[] args) {
 
-        System.out.println("=======Employee model=======");
+        System.out.println("=======Employee ait.user.model=======");
 
         double totalSalary = 0;
         Employee employee = new Employee();

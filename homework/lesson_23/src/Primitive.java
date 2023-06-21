@@ -11,45 +11,47 @@ public class Primitive {
         int match = 0;
         for (String a : args) {
             switch (a) {
-                case "byte" -> {
+                case "byte":
                     res.append("\nbyte MIN_VALUE = " + Byte.MIN_VALUE);
                     res.append("\nbyte MAX_VALUE = " + Byte.MAX_VALUE);
                     match++;
-                }
-                case "int" -> {
+                    break;
+                case "int":
                     res.append("\nint MIN_VALUE = " + Integer.MIN_VALUE);
                     res.append("\nint MAX_VALUE = " + Integer.MAX_VALUE);
                     match++;
-                }
-                case "short" -> {
+                    break;
+                case "short":
                     res.append("\nshort MIN_VALUE = " + Short.MIN_VALUE);
                     res.append("\nshort MAX_VALUE = " + Short.MAX_VALUE);
                     match++;
-                }
-                case "long" -> {
+                    break;
+                case "long":
                     res.append("\nlong MIN_VALUE = " + Long.MIN_VALUE);
                     res.append("\nlong MAX_VALUE = " + Long.MAX_VALUE);
                     match++;
-                }
-                case "char" -> {
-                    res.append("\nchar MIN_VALUE = " + Character.MIN_VALUE);
-                    res.append("\nchar MAX_VALUE = " + Character.MAX_VALUE);
+                    break;
+                case "char":
+                    res.append("\nchar MIN_VALUE = " + ((int) Character.MIN_VALUE));
+                    res.append("\nchar MAX_VALUE = " + ((int) Character.MAX_VALUE));
                     match++;
-                }
-                case "float" -> {
+                    break;
+                case "float":
                     res.append("\nfloat MIN_VALUE = " + Float.MIN_VALUE);
                     res.append("\nfloat MAX_VALUE = " + Float.MAX_VALUE);
                     match++;
-                }
-                case "boolean" -> {
-                    res.append("\nboolean MIN_VALUE = ")
-                            .append(Boolean.FALSE)
-                            .append("\nboolean MAX_VALUE = ")
-                            .append(Boolean.TRUE);
+                    break;
+                case "boolean":
+                    res.append("\ndouble MIN_VALUE = ")
+                            .append(Double.MIN_VALUE)
+                            .append("\ndouble MAX_VALUE = ")
+                            .append(Double.MAX_VALUE);
                     match++;
-                }
-                default -> res.append("\nWrong argument : ")
-                        .append(a);
+                    break;
+                default:
+                    res.append("\nWrong argument : ")
+                            .append(a);
+                    break;
             }
         }
         if (match == 0) {
@@ -61,12 +63,12 @@ public class Primitive {
                     + "\nshort MAX_VALUE = " + Short.MAX_VALUE
                     + "\nlong MIN_VALUE = " + Long.MIN_VALUE
                     + "\nlong MAX_VALUE = " + Long.MAX_VALUE
-                    + "\nchar MIN_VALUE = " + Character.MIN_VALUE
-                    + "\nchar MAX_VALUE = " + Character.MAX_VALUE
+                    + "\nchar MIN_VALUE = " + ((int) Character.MIN_VALUE)
+                    + "\nchar MAX_VALUE = " + ((int) Character.MAX_VALUE)
                     + "\nfloat MIN_VALUE = " + Float.MIN_VALUE
                     + "\nfloat MAX_VALUE = " + Float.MAX_VALUE
-                    + "\nboolean MIN_VALUE = " + Boolean.FALSE
-                    + "\nboolean MAX_VALUE = " + Boolean.TRUE;
+                    + "\ndouble MIN_VALUE = " + Double.MIN_VALUE
+                    + "\ndouble MAX_VALUE = " + Double.MAX_VALUE;
         } else
             return res.toString();
     }

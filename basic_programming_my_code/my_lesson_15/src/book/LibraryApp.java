@@ -1,7 +1,7 @@
 package book;
 //Задача 1
 //
-//Создать класс Book в пакете ait.book.model.
+//Создать класс Book в пакете ait.book.ait.user.model.
 // В этом классе определить поля: private long isbn;
 // private String title; private String author; private int yearOfPublishing;
 // Создать конструкторы для иницализации всех полей, и конструктор для инициализации полуй при отсутствии автора.

@@ -1,4 +1,4 @@
-import model.User;
+import ait.user.model.User;
 
 import java.util.Arrays;
 

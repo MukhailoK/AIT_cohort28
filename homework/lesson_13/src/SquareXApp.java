@@ -1,5 +1,5 @@
-import model.QuadraticEquation;
-//Задача 1. Создать класс QuadraticEquation в пакете ait.equation.model.
+import ait.user.model.QuadraticEquation;
+//Задача 1. Создать класс QuadraticEquation в пакете ait.equation.ait.user.model.
 // В этом классе определить поля private double a; private double b; private double c;.
 // Создать конструктор public QuadraticEquation(double a, double b, double c) для инициализации полей.
 // Создать геттеры и сеттеры. Создать метод public void display() для печати в консоль квадратного уравнения.
