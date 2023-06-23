@@ -24,13 +24,13 @@ public class User {
         }
         for (int i = 0; i < password.length(); i++) {
             if (!validUpper) {
-                validUpper = password.charAt(i) > 64 && password.charAt(i) < 91;
+                validUpper = Character.isUpperCase(password.charAt(i));
             }
             if (!validLower) {
-                validLower = password.charAt(i) > 96 && password.charAt(i) < 123;
+                validLower = Character.isLowerCase(password.charAt(i));
             }
             if (!validDigit) {
-                validDigit = password.charAt(i) > 47 && password.charAt(i) < 58;
+                validDigit = Character.isDigit(password.charAt(i));
             }
             if (!validSpecSymb) {
                 validSpecSymb = (password.charAt(i) == '!'

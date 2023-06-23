@@ -127,6 +127,4 @@ class UserTest {
             assertEquals(email, user.getEmail());
         }
     }
-
-
 }
