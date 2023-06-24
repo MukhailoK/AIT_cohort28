@@ -9,7 +9,7 @@ public class Triangle extends Shape {
 
     @Override
     public double calcArea() {
-        return (Math.sqrt(3) / 2) * Math.pow(fieldSide, 2);
+        return (Math.sqrt(3) / 4) * Math.pow(fieldSide, 2);
     }
 
     @Override
