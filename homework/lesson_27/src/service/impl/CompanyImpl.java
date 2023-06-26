@@ -38,9 +38,10 @@ public class CompanyImpl implements Company {
     @Override
     public Employee removeEmployee(int id) {
         Employee employee = findEmployee(id);
-        if (isPresent(employee)) {
+        if (employee != null && isPresent(employee)) {
             for (int i = 0; i < employees.length; i++) {
-                if (employees[i].equals(employee)) {
+                if (employees[i] != null
+                        && employees[i].equals(employee)) {
                     employees[i] = null;
                     size--;
                 }
@@ -51,13 +52,14 @@ public class CompanyImpl implements Company {
 
     @Override
     public Employee findEmployee(int id) {
-        for (Employee employee : employees) {
-
-            if (employee != null && employee.getId() == id) {
-                return employee;
+        Employee employee = null;
+        for (Employee e : employees) {
+            if (e != null
+                    && e.getId() == id) {
+                employee = e;
             }
         }
-        return null;
+        return employee;
     }
 
     @Override
@@ -67,16 +69,13 @@ public class CompanyImpl implements Company {
 
     @Override
     public double totalSalary() {
-        if (employees.length != 0) {
-            double total = 0;
-            for (Employee e : employees) {
-                if (e != null) {
-                    total += e.calcSalary();
-                }
+        double total = 0;
+        for (Employee e : employees) {
+            if (e != null) {
+                total += e.calcSalary();
             }
-            return total;
         }
-        return 0.0;
+        return total;
     }
 
     @Override
@@ -86,7 +85,7 @@ public class CompanyImpl implements Company {
 
     @Override
     public double totalSales() {
-        double sales = 0.0;
+        double sales = 0;
         for (Employee e : employees) {
             if (e instanceof SalesManager) {
                 sales += ((SalesManager) e).getSalesValue();
