@@ -26,13 +26,9 @@ public class CompanyImpl implements Company {
     @Override
     public boolean addEmployee(Employee employee) {
         if (employees.length > size && employee != null && !isPresent(employee)) {
-            for (int i = 0; i < employees.length; i++) {
-                if (employees[i] == null) {
-                    employees[i] = employee;
-                    size++;
-                    return true;
-                }
-            }
+            employees[size] = employee;
+            size++;
+            return true;
         }
         return false;
     }
@@ -41,13 +37,17 @@ public class CompanyImpl implements Company {
     public Employee removeEmployee(int id) {
         Employee employee = findEmployee(id);
         if (isPresent(employee)) {
-            for (int i = 0; i < employees.length; i++) {
+            for (int i = 0, j = 0; i < employees.length; i++) {
                 if (employees[i] != null
                         && employees[i].equals(employee)) {
                     employees[i] = null;
                     size--;
+                } else {
+                    employees[j] = employees[i];
+                    j++;
                 }
             }
+
         }
         return employee;
     }
