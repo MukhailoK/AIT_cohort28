@@ -13,9 +13,11 @@ public class CompanyImpl implements Company {
     }
 
     private boolean isPresent(Employee employee) {
-        for (Employee e : employees) {
-            if (employee.equals(e)) {
-                return true;
+        if (employee != null) {
+            for (Employee e : employees) {
+                if (employee.equals(e)) {
+                    return true;
+                }
             }
         }
         return false;
