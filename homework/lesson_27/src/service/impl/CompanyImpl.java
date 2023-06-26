@@ -12,7 +12,7 @@ public class CompanyImpl implements Company {
         employees = new Employee[capacity];
     }
 
-    private boolean iPresent(Employee employee) {
+    private boolean isPresent(Employee employee) {
         for (Employee e : employees) {
             if (employee.equals(e)) {
                 return true;
@@ -23,7 +23,7 @@ public class CompanyImpl implements Company {
 
     @Override
     public boolean addEmployee(Employee employee) {
-        if (employees.length > size && employee != null && !iPresent(employee)) {
+        if (employees.length > size && employee != null && !isPresent(employee)) {
             for (int i = 0; i < employees.length; i++) {
                 if (employees[i] == null) {
                     employees[i] = employee;
@@ -38,10 +38,12 @@ public class CompanyImpl implements Company {
     @Override
     public Employee removeEmployee(int id) {
         Employee employee = findEmployee(id);
-        for (int i = 0; i < employees.length; i++) {
-            if (employees[i] == employee) {
-                employees[i] = null;
-                size--;
+        if (isPresent(employee)) {
+            for (int i = 0; i < employees.length; i++) {
+                if (employees[i].equals(employee)) {
+                    employees[i] = null;
+                    size--;
+                }
             }
         }
         return employee;
