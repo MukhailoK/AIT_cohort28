@@ -45,8 +45,7 @@ public class CompanyImpl implements Company {
         Employee employee = findEmployee(id);
         if (isPresent(employee)) {
             for (int i = 0, j = 0; i < size; i++) {
-                if (employees[i] != null
-                        && employees[i].equals(employee)) {
+                if (employees[i].equals(employee)) {
                     employees[i] = null;
                     size--;
                 } else {
@@ -55,6 +54,7 @@ public class CompanyImpl implements Company {
                 }
             }
         }
+
         return employee;
     }
 
