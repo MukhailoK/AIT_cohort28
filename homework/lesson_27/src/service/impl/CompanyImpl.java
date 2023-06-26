@@ -1,7 +1,8 @@
-package service;
+package service.impl;
 
 import model.Employee;
 import model.SalesManager;
+import service.Company;
 
 public class CompanyImpl implements Company {
     private Employee[] employees;

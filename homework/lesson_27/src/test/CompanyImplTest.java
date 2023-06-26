@@ -7,7 +7,7 @@ import model.WageEmployee;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import service.Company;
-import service.CompanyImpl;
+import service.impl.CompanyImpl;
 
 import static org.junit.jupiter.api.Assertions.*;
 
