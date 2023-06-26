@@ -40,7 +40,7 @@ public class CompanyImpl implements Company {
     @Override
     public Employee removeEmployee(int id) {
         Employee employee = findEmployee(id);
-        if (employee != null && isPresent(employee)) {
+        if (isPresent(employee)) {
             for (int i = 0; i < employees.length; i++) {
                 if (employees[i] != null
                         && employees[i].equals(employee)) {
