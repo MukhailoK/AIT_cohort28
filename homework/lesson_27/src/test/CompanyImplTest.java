@@ -33,8 +33,12 @@ class CompanyImplTest {
         assertFalse(company.addEmployee(null));
         assertFalse(company.addEmployee(firm[1]));
         Employee employee = new SalesManager(5000, "Rabindranat", "Anand", 80, 20000, 0.1);
+        Employee employee1 = new SalesManager(6000, "Rabindrana", "Anan", 8, 2000, 0.1);
+        Employee employee2 = new SalesManager(7000, "Rabindrana", "Anan", 8, 2000, 0.1);
         assertTrue(company.addEmployee(employee));
-        assertEquals(5, company.quantity());
+        assertTrue(company.addEmployee(employee1));
+        assertTrue(company.addEmployee(employee2));
+        assertEquals(7, company.quantity());
         employee = new SalesManager(6000, "Rabindranat", "Anand", 80, 20000, 0.1);
         assertFalse(company.addEmployee(employee));
     }

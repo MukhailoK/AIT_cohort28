@@ -29,6 +29,13 @@ public class CompanyImpl implements Company {
             employees[size] = employee;
             size++;
             return true;
+        } else if (size == employees.length && employee != null && !isPresent(employee)) {
+            Employee[] employees1 = new Employee[size + size / 2];
+            System.arraycopy(employees, 0, employees1, 0, employees.length);
+            employees = employees1;
+            employees[size] = employee;
+            size++;
+            return true;
         }
         return false;
     }
@@ -37,7 +44,7 @@ public class CompanyImpl implements Company {
     public Employee removeEmployee(int id) {
         Employee employee = findEmployee(id);
         if (isPresent(employee)) {
-            for (int i = 0, j = 0; i < employees.length; i++) {
+            for (int i = 0, j = 0; i < size; i++) {
                 if (employees[i] != null
                         && employees[i].equals(employee)) {
                     employees[i] = null;
@@ -47,7 +54,6 @@ public class CompanyImpl implements Company {
                     j++;
                 }
             }
-
         }
         return employee;
     }
