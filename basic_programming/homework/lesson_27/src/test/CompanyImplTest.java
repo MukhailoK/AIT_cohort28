@@ -81,4 +81,18 @@ class CompanyImplTest {
     void printEmployees() {
         company.printEmployees();
     }
+
+    @Test
+    void findEmployeesHoursGreaterThen(){
+        Employee[] actual = company.findEmployeesHoursGreaterThen(100);
+        Employee[] expected = {firm[0], firm[1], firm[2]};
+        assertArrayEquals(expected, actual);
+    }
+
+    @Test
+    void findEmployeesSalaryRange(){
+        Employee[] actual = company.findEmployeesBetweenSalaryThen(2000, 2500);
+        Employee[] expected = {firm[1], firm[3]};
+        assertArrayEquals(expected, actual);
+    }
 }

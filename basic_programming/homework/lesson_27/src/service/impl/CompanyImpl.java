@@ -54,7 +54,6 @@ public class CompanyImpl implements Company {
                 }
             }
         }
-
         return employee;
     }
 
@@ -107,5 +106,41 @@ public class CompanyImpl implements Company {
         for (int i = 0; i < size; i++) {
             System.out.println(employees[i]);
         }
+    }
+
+    @Override
+    public Employee[] findEmployeesHoursGreaterThen(int hours) {
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (employees[i].getHours() >= hours) {
+                count++;
+            }
+        }
+        Employee[] employeesSalary = new Employee[count];
+
+        for (int i = 0, j = 0; j < count; i++) {
+            if (employees[i].getHours() >= hours) {
+                employeesSalary[j++] = employees[i];
+            }
+        }
+        return employeesSalary;
+    }
+
+    @Override
+    public Employee[] findEmployeesBetweenSalaryThen(int min, int max) {
+        int count = 0;
+        for (int i = 0; i < size; i++) {
+            if (employees[i].calcSalary() >= min && employees[i].calcSalary() < max) {
+                count++;
+            }
+        }
+        Employee[] employeesSalary = new Employee[count];
+
+        for (int i = 0, j = 0; j < count; i++) {
+            if (employees[i].calcSalary() >= min && employees[i].calcSalary() < max) {
+                employeesSalary[j++] = employees[i];
+            }
+        }
+        return employeesSalary;
     }
 }
