@@ -93,7 +93,7 @@ public class CompanyImpl implements Company {
 
     @Override
     public Employee[] findEmployeesSalaryRange(int minSalary, int maxSalary) {
-        return findEmployeesByPredicate(e -> e.calcSalary() >= maxSalary
+        return findEmployeesByPredicate(e -> e.calcSalary() >= minSalary
                 && e.calcSalary() < maxSalary);
     }
 

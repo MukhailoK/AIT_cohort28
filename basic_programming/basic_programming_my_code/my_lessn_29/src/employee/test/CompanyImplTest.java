@@ -85,13 +85,13 @@ class CompanyImplTest {
     void findEmployeesHoursGreaterThan() {
         Employee[] actual = company.findEmployeesHoursGreaterThan(100);
         Employee[] expected = {firm[0],firm[1],firm[2]};
-        assertEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
     @Test
     void findEmployeesSalaryRange(){
-        Employee[] actual = company.findEmployeesSalaryRange(2000, 2500);
+        Employee[] actual = company.findEmployeesSalaryRange(2000, 3500);
         Employee[] expected = {firm[0],firm[3]};
-        assertEquals(expected, actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
