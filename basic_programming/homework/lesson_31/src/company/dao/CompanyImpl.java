@@ -73,9 +73,7 @@ public class CompanyImpl extends Company {
     @Override
     public void printAll() {
         for (Employee e : employees) {
-            if (e != null) {
                 System.out.println(e);
-            }
         }
     }
 
@@ -100,22 +98,16 @@ public class CompanyImpl extends Company {
     }
 
     private Employee[] findByPredicate(Predicate<Employee> predicate) {
-        Employee[] emp;
-        int count = 0;
-        for (Employee e : employees) {
-            if (predicate.test(e)) {
-                count++;
-            }
-        }
-        emp = new Employee[count];
+        Employee[] emp = new Employee[employees.length];
 
-        for (int i = 0, j = 0; i < size; i++) {
+        int j = 0;
+        for (int i = 0; i < size; i++) {
             if (predicate.test(employees[i])) {
                 emp[j] = employees[i];
                 j++;
             }
         }
-        return emp;
+        return Arrays.copyOfRange(emp, 0, j);
     }
 
     public Employee[] getEmployeesByAge() {

@@ -13,33 +13,28 @@ public class DateSortTest {
     @BeforeEach
     void setUp() {
         dateComparator = (s1, s2) -> {
+            int result = 1;
             int day1 = Integer.parseInt(s1.substring(0, 2));
             int month1 = Integer.parseInt(s1.substring(3, 5));
             int year1 = Integer.parseInt(s1.substring(6, 10));
+
             int day2 = Integer.parseInt(s2.substring(0, 2));
             int month2 = Integer.parseInt(s2.substring(3, 5));
             int year2 = Integer.parseInt(s2.substring(6, 10));
 
-            if (year1 > year2) {
-                return 1;
-            } else if (year1 < year2) {
-                return -1;
-            } else {
-                if (month1 > month2) {
-                    return 1;
-                } else if (month1 < month2) {
-                    return -1;
+            if (year1 <= year2) if (year1 < year2) {
+                result = -1;
+            } else if (month1 <= month2) if (month1 < month2) {
+                result = -1;
+            } else if (day1 <= day2) {
+                if (day1 < day2) {
+                    result = -1;
                 } else {
-                    if (day1 > day2) {
-                        return 1;
-                    } else if (day1 < day2) {
-                        return -1;
-                    }
-                    return 0;
+                    result = 0;
                 }
             }
-        }
-        ;
+            return result;
+        };
     }
 
     @Test
