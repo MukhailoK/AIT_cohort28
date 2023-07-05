@@ -17,7 +17,6 @@ public class Matrix {
                 res[i][j] = matrix[j][i];
             }
         }
-        //TODO
         return res;
     }
 
@@ -26,7 +25,6 @@ public class Matrix {
             int[][] res = new int[matrix1.length][matrix2[0].length];
             for (int i = 0; i < res.length; i++) {
                 for (int j = 0; j < res[i].length; j++) {
-                    res[i][j] = 0;
                     for (int n = 0; n < matrix2.length; n++) {
                         res[i][j] += matrix1[i][n] * matrix2[n][j];
                     }
