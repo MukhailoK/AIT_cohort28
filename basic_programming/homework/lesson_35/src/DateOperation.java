@@ -6,15 +6,15 @@ import java.util.Comparator;
 public class DateOperation {
 
     public static int getAge(String s) {
-        return LocalDate.now().getYear() - parseString(s).getYear();
+        return LocalDate.now().getYear() - parseStringToLocaleDate(s).getYear();
     }
 
     public static String[] sortStringDates(String[] dates) {
-        Arrays.sort(dates, Comparator.comparing(DateOperation::parseString));
+       Arrays.sort(dates, Comparator.comparing(DateOperation::parseStringToLocaleDate));
         return dates;
     }
 
-    private static LocalDate parseString(String s) {
+    private static LocalDate parseStringToLocaleDate(String s) {
         DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         if (s.contains("-")) {
             df = DateTimeFormatter.ofPattern("yyyy-MM-dd");
