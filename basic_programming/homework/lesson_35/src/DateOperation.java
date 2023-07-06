@@ -10,7 +10,7 @@ public class DateOperation {
     }
 
     public static String[] sortStringDates(String[] dates) {
-       Arrays.sort(dates, Comparator.comparing(DateOperation::parseStringToLocaleDate));
+       Arrays.sort(dates, Comparator.comparing(s -> parseStringToLocaleDate(s)));
         return dates;
     }
 
