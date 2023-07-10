@@ -13,10 +13,7 @@ public class ForumImpl implements Forum {
 
     private static final int DEFAULT_SIZE = 10;
 
-    static Comparator<Post> comparator = (p1, p2) -> {
-        int res = p1.getDate().compareTo(p2.getDate());
-        return res != 0 ? res : Integer.compare(p1.getPostId(), p2.getPostId());
-    };
+    static Comparator<Post> comparator = Comparator.comparing(Post::getDate).thenComparingInt(Post::getPostId);
 
     private Post[] posts;
     private int size;
