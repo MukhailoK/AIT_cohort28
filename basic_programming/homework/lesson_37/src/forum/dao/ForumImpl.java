@@ -15,7 +15,7 @@ public class ForumImpl implements Forum {
 
     static Comparator<Post> comparator = (p1, p2) -> {
         int res = p1.getDate().compareTo(p2.getDate());
-        return res != 0 ? res : Integer.compare(p1.getPostId(), p1.getPostId());
+        return res != 0 ? res : Integer.compare(p1.getPostId(), p2.getPostId());
     };
 
     private Post[] posts;
