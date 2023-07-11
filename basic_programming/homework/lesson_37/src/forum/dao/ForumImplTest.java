@@ -20,9 +20,9 @@ class ForumImplTest {
         forum = new ForumImpl();
         posts[0] = new Post(1, "Title1", "Author1", "Content1");
         posts[1] = new Post(2, "Title2", "Author2", "Content2");
-        posts[1].setDate(now.minusDays(4));
+        posts[1].setDate(now.minusDays(3));
         posts[2] = new Post(3, "Title3", "Author2", "Content3");
-        posts[2].setDate(now.minusDays(3));
+        posts[2].setDate(now.minusDays(4));
         posts[3] = new Post(4, "Title4", "Author4", "Content4");
         posts[4] = new Post(5, "Title5", "Author1", "Content5");
         posts[5] = new Post(6, "Title6", "Author1", "Content6");
@@ -70,8 +70,8 @@ class ForumImplTest {
     @Test
     void getPostsByAuthor() {
         Post[] expected = new Post[2];
-        expected[1] = posts[2];
-        expected[0] = posts[1];
+        expected[0] = posts[2];
+        expected[1] = posts[1];
         Post[] actual = forum.getPostsByAuthor("Author2");
         assertArrayEquals(expected, actual);
     }
@@ -81,8 +81,8 @@ class ForumImplTest {
         LocalDate ld = now.toLocalDate();
         Post[] actual = forum.getPostsByAuthor("Author2", ld.minusDays(5), ld.minusDays(2));
         Post[] expected = new Post[2];
-        expected[1] = posts[2];
-        expected[0] = posts[1];
+        expected[0] = posts[2];
+        expected[1] = posts[1];
         assertArrayEquals(expected, actual);
     }
 
