@@ -23,19 +23,22 @@ public class ForumImpl implements Forum {
     }
 
     private boolean save(Post post) {
-        if (post != null) {
-            int index = Arrays.binarySearch(posts, 0, size, post, comparator);
-            index = index >= 0 ? index : -index - 1;
-            System.arraycopy(posts, index, posts, index + 1, size - index);
-            posts[index] = post;
-            size++;
-            return true;
+        if (post == null) {
+            throw new RuntimeException("Post can't be null");
         }
-        return false;
+        int index = Arrays.binarySearch(posts, 0, size, post, comparator);
+        index = index >= 0 ? index : -index - 1;
+        System.arraycopy(posts, index, posts, index + 1, size - index);
+        posts[index] = post;
+        size++;
+        return true;
+
     }
 
     @Override
     public boolean addPost(Post post) {
+
+
         if (posts.length > size && !isPresent(post)) {
             return save(post);
 

@@ -34,7 +34,12 @@ class ForumImplTest {
 
     @Test
     void addPost() {
-        assertFalse(forum.addPost(null));
+        RuntimeException exception = assertThrows(RuntimeException.class, () -> {
+            forum.addPost(null);
+        });
+        String expectedMessage = "Post can't be null";
+        String actualMessage = exception.getMessage();
+        assertEquals(expectedMessage, actualMessage);
         assertFalse(forum.addPost(posts[1]));
         Post post = new Post(7, "Title7", "Author3", "Content7");
         assertTrue(forum.addPost(post));
@@ -67,7 +72,7 @@ class ForumImplTest {
         Post[] expected = new Post[2];
         expected[1] = posts[2];
         expected[0] = posts[1];
-        Post[] actual =  forum.getPostsByAuthor("Author2");
+        Post[] actual = forum.getPostsByAuthor("Author2");
         assertArrayEquals(expected, actual);
     }
 
