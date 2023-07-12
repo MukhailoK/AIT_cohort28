@@ -13,7 +13,7 @@ public class ForumImpl implements Forum {
 
     private static final int DEFAULT_SIZE = 10;
 
-    static Comparator<Post> comparator = Comparator.comparing(Post::getAuthor).thenComparing(Post::getDate).thenComparingInt(Post::getPostId);
+    static Comparator<Post> comparator = Comparator.comparing(Post::getAuthor).thenComparing(Post::getDate);
 
     private Post[] posts;
     private int size;
@@ -97,31 +97,28 @@ public class ForumImpl implements Forum {
 
     @Override
     public Post[] getPostsByAuthor(String author) {
-        return findByPredicate(post -> post.getAuthor().equals(author));
+        Post pattern = new Post(Integer.MIN_VALUE, null, author, null);
+        return binarySearch(posts, pattern, LocalDate.MIN, LocalDate.MAX);
     }
-
 
     @Override
     public Post[] getPostsByAuthor(String author, LocalDate dateFrom, LocalDate dateTo) {
-        Post[] posts = getPostsByAuthor(author);
         Post pattern = new Post(Integer.MIN_VALUE, null, author, null);
         return binarySearch(posts, pattern, dateFrom, dateTo);
+    }
+
+    private Post[] binarySearch(Post[] posts, Post pattern, LocalDate dateFrom, LocalDate dateTo) {
+        pattern.setDate(dateFrom.atStartOfDay());
+        int from = -Arrays.binarySearch(posts, pattern, comparator) - 1;
+        pattern = new Post(Integer.MAX_VALUE,  null, pattern.getAuthor(), null);
+        pattern.setDate(LocalDateTime.of(dateTo, LocalTime.MAX));
+        int to = -Arrays.binarySearch(posts, pattern, comparator) - 1;
+        return Arrays.copyOfRange(posts, from, to);
     }
 
     @Override
     public int size() {
         return size;
-    }
-
-    private Post[] binarySearch(Post[] posts, Post pattern, LocalDate dateFrom, LocalDate dateTo) {
-        pattern.setDate(dateFrom.atStartOfDay());
-        int from = -Arrays.binarySearch(posts, 0, posts.length, pattern, comparator) - 1;
-        from = from >= 0 ? from : -from - 1;
-        pattern = new Post(Integer.MAX_VALUE, null, pattern.getAuthor(), null);
-        pattern.setDate(LocalDateTime.of(dateTo, LocalTime.MAX));
-        int to = -Arrays.binarySearch(posts, 0, posts.length, pattern, comparator) - 1;
-        to = to >= 0 ? to : -to - 1;
-        return Arrays.copyOfRange(posts, from, to);
     }
 
     private Post[] findByPredicate(Predicate<Post> predicate) {
