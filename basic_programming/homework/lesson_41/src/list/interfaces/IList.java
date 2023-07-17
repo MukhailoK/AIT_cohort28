@@ -43,5 +43,5 @@ public interface IList<E> extends Iterable<E> {
 
     void printElements();
 
-    public boolean addInStart(E element);
+    boolean addInStart(E element);
 }

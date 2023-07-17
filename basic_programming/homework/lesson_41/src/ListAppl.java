@@ -1,7 +1,7 @@
 import list.interfaces.IList;
 import list.model.MyArrayList;
 
-import java.util.Random;
+
 import java.util.Scanner;
 
 public class ListAppl {
