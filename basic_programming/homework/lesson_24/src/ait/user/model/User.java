@@ -72,7 +72,7 @@ public class User {
     5) min one special symbol (!%@*&)
      */
     private boolean validatePassword(String password) {
-        //TODO
+
         return false;
     }
 
