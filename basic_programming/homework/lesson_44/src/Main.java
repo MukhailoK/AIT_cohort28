@@ -8,7 +8,7 @@ public class Main {
         injectRandomElement(array);
         System.out.println("After");
         printArr(array);
-        getResult(array);
+        printResult(array);
     }
 
     public static int getIndexOfDuplicate(int[] array) {
@@ -48,7 +48,7 @@ public class Main {
         return array;
     }
 
-    public static void getResult(int[] array) {
+    public static void printResult(int[] array) {
         int index = getIndexOfDuplicate(array);
         if (index != -1) {
             System.out.println("\nindex of duplicate = "
