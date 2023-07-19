@@ -6,7 +6,7 @@ public class Main {
         System.out.println("Before");
         printArr(array);
         injectRandomElement(array);
-        System.out.println("After");
+        System.out.println("\nAfter");
         printArr(array);
         printResult(array);
     }
@@ -35,8 +35,8 @@ public class Main {
 
     public static void injectRandomElement(int[] array) {
         Random random = new Random();
-        int rd = random.nextInt(1, 101);
-        int rdInd = random.nextInt(0, 100);
+        int rd = random.nextInt(1, array.length + 2);
+        int rdInd = random.nextInt(0, array.length + 1);
         array[rdInd] = rd;
     }
 
