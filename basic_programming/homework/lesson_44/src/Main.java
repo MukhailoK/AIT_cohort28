@@ -53,7 +53,7 @@ public class Main {
         if (index != -1) {
             System.out.println("\nindex of duplicate = "
                     + index
-                    + ", number = "
+                    + ", duplicate = "
                     + array[index]);
         } else {
             System.out.println("not found");
