@@ -56,7 +56,7 @@ public class Main {
                     + ", duplicate = "
                     + array[index]);
         } else {
-            System.out.println("not found");
+            System.out.println("\nnot found");
         }
     }
 }
