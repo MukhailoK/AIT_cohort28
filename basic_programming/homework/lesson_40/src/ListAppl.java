@@ -43,6 +43,9 @@ public class ListAppl {
             System.out.println(i);
 
         }
+        System.out.println("====set=====");
+        list.set(1, 4);
+        System.out.println(list.get(1));
         System.out.println("====================");
         list.clear();
         System.out.println(list.size());
