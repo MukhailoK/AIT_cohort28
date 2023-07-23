@@ -22,6 +22,7 @@ public class MyArrayList<E> implements IList<E> {
     }
 
     //O(1)
+
     /**
      * The function returns the size of a data structure.
      *
@@ -32,6 +33,7 @@ public class MyArrayList<E> implements IList<E> {
         return size;
     }
     //O(n)
+
     /**
      * The clear() function sets all elements in the elements array to null and updates the size to 0.
      */
@@ -46,6 +48,7 @@ public class MyArrayList<E> implements IList<E> {
     }
 
     //O(1)
+
     /**
      * The add() function adds an element to an array, ensuring that there is enough capacity.
      *
@@ -59,6 +62,7 @@ public class MyArrayList<E> implements IList<E> {
         return true;
     }
     //O(1)
+
     /**
      * The function ensures that the capacity of the array is sufficient to accommodate new elements, and increases the
      * capacity if necessary.
@@ -76,11 +80,12 @@ public class MyArrayList<E> implements IList<E> {
         }
     }
     //O(n)
+
     /**
      * The add method inserts an element at a specified index in an array, shifting all subsequent elements to the right.
      *
-     * @param index The index parameter represents the position at which the element should be added in the list. It is an
-     * integer value that specifies the index position in the list where the element should be inserted.
+     * @param index   The index parameter represents the position at which the element should be added in the list. It is an
+     *                integer value that specifies the index position in the list where the element should be inserted.
      * @param element The element to be added at the specified index in the list.
      * @return The method is returning a boolean value, specifically `true`.
      */
@@ -95,11 +100,12 @@ public class MyArrayList<E> implements IList<E> {
     }
 
     //O(1)
+
     /**
      * The function returns the element at the specified index in an array.
      *
      * @param index The index parameter is an integer that represents the position of the element to be retrieved from the
-     * list.
+     *              list.
      * @return The element at the specified index is being returned.
      */
     @Override
@@ -139,6 +145,7 @@ public class MyArrayList<E> implements IList<E> {
 
         return -1;
     }
+
     //O(n)
     // The `lastIndexOf` method is used to find the index of the last occurrence of a specified element in the array.
     @Override
@@ -160,6 +167,7 @@ public class MyArrayList<E> implements IList<E> {
         return -1;
     }
     //O(n)
+
     /**
      * The remove() function removes an element at a specified index from an array and returns the removed element.
      *
@@ -172,19 +180,23 @@ public class MyArrayList<E> implements IList<E> {
         E e = (E) elements[index];
         elements[index] = null;
         for (int i = 0, j = 0; i > size; i++) {
-            if (i != index) {
+            if (i == index) {
+                elements[i] = null;
+            } else {
                 elements[j] = elements[i];
                 j++;
-            }else{size--;}
+            }
         }
+        size--;
         return e;
     }
     //O(1)
+
     /**
      * The function sets the element at the specified index in the list and returns the previous element at that index.
      *
-     * @param index The index parameter represents the position in the list where the element needs to be set. It is an
-     * integer value that specifies the index of the element to be replaced.
+     * @param index   The index parameter represents the position in the list where the element needs to be set. It is an
+     *                integer value that specifies the index of the element to be replaced.
      * @param element The element that will replace the existing element at the specified index.
      * @return The method is returning the element that was previously at the specified index.
      */
@@ -196,6 +208,7 @@ public class MyArrayList<E> implements IList<E> {
         return e;
     }
     //O(1)
+
     /**
      * The function returns an iterator that allows iterating over the elements of a collection.
      *

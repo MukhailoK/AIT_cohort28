@@ -32,6 +32,11 @@ public class ListAppl {
         System.out.println(list.lastIndexOf(10));
         System.out.println(list.get(2));
         System.out.println(list.get(5));
+        System.out.println("====Remove====");
+        System.out.println(list.size());
+        System.out.println(list.remove(2));
+        System.out.println(list.get(2));
+        System.out.println(list.size());
         System.out.println("test for-each");
         for (Integer i : list) {
             System.out.println(i);
