@@ -144,13 +144,13 @@ public class MyArrayList<E> implements IList<E> {
     @Override
     public int lastIndexOf(Object o) {
         if (o != null) {
-            for (int i = size; i > 0; i--) {
+            for (int i = size; i >= 0; i--) {
                 if (o.equals(elements[i])) {
                     return i;
                 }
             }
         } else {
-            for (int i = size; i > 0; i--) {
+            for (int i = size; i >= 0; i--) {
                 if (o == elements[i]) {
                     return i;
                 }
@@ -175,7 +175,7 @@ public class MyArrayList<E> implements IList<E> {
             if (i != index) {
                 elements[j] = elements[i];
                 j++;
-            }
+            }else{size--;}
         }
         return e;
     }
