@@ -178,15 +178,16 @@ public class MyArrayList<E> implements IList<E> {
     public E remove(int index) {
         checkIndex(index);
         E e = (E) elements[index];
-        elements[index] = null;
-        for (int i = 0, j = 0; i > size; i++) {
-            if (i == index) {
-                elements[i] = null;
-            } else {
-                elements[j] = elements[i];
-                j++;
-            }
-        }
+//        elements[index] = null;
+//        for (int i = 0, j = 0; i > size; i++) {
+//            if (i == index) {
+//                elements[i] = null;
+//            } else {
+//                elements[j] = elements[i];
+//                j++;
+//            }
+//        }
+        System.arraycopy(elements, index + 1, elements, index, size - 1 - index);
         size--;
         return e;
     }
